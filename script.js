@@ -49,3 +49,11 @@ for (let index = 0; index < persons.length; index++) {
   console.log(newPerson);
   listElement.appendChild(newPerson);
 }
+
+async function logMovies() {
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
+  const movies = await response.json();
+  console.log(movies);
+}
+
+logMovies();
