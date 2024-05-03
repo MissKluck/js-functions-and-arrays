@@ -1,3 +1,5 @@
+import { persons } from "./data.js";
+
 function createPersonCard(person) {
   // Generere et html element
   const articleElement = document.createElement("article");
@@ -37,3 +39,13 @@ const sigridElement = createPersonCard(sigrid);
 const container = document.getElementById("single-person");
 // 2. Sett inn det nye elementet som et underelement
 container.appendChild(sigridElement);
+
+// === Rendring av lister ===
+const listElement = document.getElementById("person-list");
+
+for (let index = 0; index < persons.length; index++) {
+  console.log(persons[index]);
+  const newPerson = createPersonCard(persons[index]);
+  console.log(newPerson);
+  listElement.appendChild(newPerson);
+}
